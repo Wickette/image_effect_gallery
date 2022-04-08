@@ -1,0 +1,291 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* STYLE FOR IMAGE 1 */
+h1.header-h1 {
+    text-align: center;
+    font-family: Raleway;
+    color: #34495e;
+}
+
+p.header-p {
+    text-align: center;
+    font-family: Raleway;
+    color: #34495e;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+div.item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+div.item * {
+    max-width: 100%;
+    vertical-align: top;
+    height: 210px;
+}
+
+div.item i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    font-size: 34px;
+    color: #000000;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background: #ffffff;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 500ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+div.item a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+div.item.red {
+    background-color: #e74c3c;
+}
+
+div.item.red i {
+    color: #e74c3c;
+}
+
+div.item:hover img {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+div.item * {
+    transition: 0.5s ease-in-out all;
+}
+
+div.item:hover i {
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* STYLE FOR IMAGE 2 */
+div.frame {
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+div.text {
+  position: absolute;
+  pointer-events: none;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+div.text p:nth-child(1) {
+  font-size: 4rem;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+}
+figure .image-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  transition: all 1s ease-in-out;
+}
+figure .image-2 {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background-image: url(https://source.unsplash.com/63JKK67yGUE);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+figure:hover .image-2 {
+  opacity: 1;
+  transform: translate(0) !important;
+}
+figure:hover + .text {
+  color: white;
+}
+figure .image-2:nth-child(2) {
+  background-position: 0px 0px;
+  left: 0px;
+  transform: translateY(60px);
+}
+figure .image-2:nth-child(3) {
+  background-position: -50px 0;
+  left: 50px;
+  transform: translateY(-60px);
+}
+figure .image-2:nth-child(4) {
+  background-position: -100px 0;
+  left: 100px;
+  transform: translateY(60px);
+}
+figure .image-2:nth-child(5) {
+  left: 150px;
+  background-position: -150px 0;
+  transform: translateY(-60px);
+}
+figure .image-2:nth-child(6) {
+  left: 200px;
+  background-position: -200px 0;
+  transform: translateY(60px);
+}
+figure .image-2:nth-child(7) {
+  left: 250px;
+  background-position: -250px 0;
+  transform: translateY(-60px);
+}
+figure .image-2:nth-child(8) {
+  left: 300px;
+  background-position: -300px 0;
+  transform: translateY(60px);
+}
+figure .image-2:nth-child(9) {
+  left: 350px;
+  background-position: -350px 0;
+  transform: translateY(-60px);
+}
+
+/* STYLE FOR IMAGE 3 */
+.gallery {
+    perspective: 700px;
+    width: 50vw;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-flow: row wrap;
+}
+ul {
+    position: relative;
+    width:100px; 
+    height:100px;
+    margin:0.1em;
+    perspective-origin:center center;
+    transform-style:preserve-3d;
+    transform:rotateX(40deg);
+    transition:all 0.4s;
+}
+
+ul:hover {
+transform:translateZ(100px) rotateX(20deg); z-index:999;
+}
+
+ul:hover li {
+filter:grayscale(0);
+}
+
+li {
+
+    position:absolute; 
+    /* left:0; 
+    top:0; */
+    backface-visibility:hidden;
+    width:100%; height:100%;
+    transition:transform 0.3s, filter 1s;
+    filter:grayscale(0.9);
+}
+/*
+Setup individual planes final poistion(by left top) and initial position(by transform)
+*/
+li:first-of-type {transform:none;}
+li:nth-of-type(2) {left:100%; transform-origin:left center; transform:rotateY(180deg);}
+li:nth-of-type(3) {top:100%; transform-origin:center top; transform:rotateX(-180deg);}
+li:nth-of-type(4) {left:-100%; transform-origin:right center; transform:rotateY(-180deg);}
+li:nth-of-type(5) {top:-100%; transform-origin:center bottom; transform:rotateX(180deg);}
+li:nth-of-type(6) {top:100%; left:100%; transform-origin:center top; transform:rotateX(-180deg);}
+li:nth-of-type(7) {top:100%; left:-100%; transform-origin:right center; transform:rotateY(-180deg);}
+li:nth-of-type(8) {top:-100%; left:-100%; transform-origin:center bottom; transform:rotateX(180deg);}
+li:nth-of-type(9) {top:-100%; left:100%; transform-origin:left center; transform:rotateY(180deg);}
+/*
+Setup transition-delay, for mouseout state 
+*/
+li:nth-of-type(2),li:nth-of-type(3),li:nth-of-type(4),li:nth-of-type(5) {transition-delay:0.03s;}
+li:nth-of-type(6),li:nth-of-type(7),li:nth-of-type(8),li:nth-of-type(9) {transition-delay:0s;}
+ul:hover :nth-of-type(2),ul:hover :nth-of-type(3),ul:hover :nth-of-type(4),ul:hover :nth-of-type(5) {transition-delay:0s}
+ul:hover :nth-of-type(6),ul:hover :nth-of-type(7),ul:hover :nth-of-type(8),ul:hover :nth-of-type(9) {transition-delay:0.2s}
+/*
+Setup planes final state
+*/
+ul:hover :nth-of-type(2),ul:hover :nth-of-type(4),ul:hover :nth-of-type(7),ul:hover :nth-of-type(9) {transform:rotateY(0);}
+ul:hover :nth-of-type(3), ul:hover :nth-of-type(5),ul:hover :nth-of-type(6), ul:hover :nth-of-type(8) {transform:rotateX(0);}
+/* 
+Set background position
+*/
+ul li {background-size:300% 300%;}
+li:nth-of-type(1) {background-position:center center;}
+li:nth-of-type(2) {background-position:right center;}
+li:nth-of-type(3) {background-position:center bottom;}
+li:nth-of-type(4) {background-position:left center;}
+li:nth-of-type(5) {background-position:center top;}
+li:nth-of-type(6) {background-position:right bottom;}
+li:nth-of-type(7) {background-position:left bottom;}
+li:nth-of-type(8) {background-position:left top;}
+li:nth-of-type(9) {background-position:right top;}
+/*
+Set background image source
+*/
+ul:nth-of-type(1) li { 
+    background-image:url('https://wallup.net/wp-content/uploads/2016/01/310841-landscape-nature-bridge-island-trees-sea-clouds-wooden_surface-Chile-hill.jpg');
+}
+
+ul:nth-of-type(1) {
+    width:120px; 
+    height:80px; 
+}
+/* 
+Hide debug label 
+*/
+li { 
+    text-indent:999px; 
+    overflow:hidden; 
+}
+
+
+
